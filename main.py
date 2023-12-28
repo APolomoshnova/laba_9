@@ -1,6 +1,6 @@
 import string
 import random
-import threading
+import threading  # модуль для многопоточности
 
 text = None
 result = None
@@ -61,11 +61,13 @@ if __name__ == '__main__':
 
         if point == "1":
             input_thread = threading.Thread(target=input_text_thread)
+            # создает новый поток исполнения с использованием модуля
             input_thread.start()
             input_thread.join()
         elif point == "2":
             if text:
                 count_thread = threading.Thread(target=count_text_thread)
+                # создает новый поток исполнения с использованием модуля
                 count_thread.start()
                 count_thread.join()
                 print("Исходные данные: ", text)
